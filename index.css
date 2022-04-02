@@ -1,0 +1,106 @@
+* {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+html, body, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  z-index: 2;
+  height: 100vh;
+}
+
+.navigation {
+  position: relative;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.hamburger {
+  position: absolute;
+  left: 1.5em;
+  cursor: pointer;
+}
+
+.main-header {
+  position: absolute;
+  left: 0;
+  margin-left: 3em;
+}
+
+.cart {
+  position: absolute;
+  right: 20%;
+  cursor: pointer;
+}
+.cart:hover {
+  filter: brightness(130%);
+}
+
+.avatar {
+  position: absolute;
+  cursor: pointer;
+  right: 7%;
+  height: 30px;
+}
+
+.hamburger-menu {
+  background-color: hsl(0deg, 0%, 100%);
+  padding-left: 1.5em;
+  padding-top: 3em;
+  width: min(70%, 20em);
+  min-height: 100vh;
+  border: 0;
+  margin-left: 0;
+}
+.hamburger-menu p {
+  font-weight: 700;
+}
+
+.hamburger-menu::-webkit-backdrop {
+  background: hsl(0deg, 0%, 15%);
+  opacity: 0.7;
+}
+
+.hamburger-menu::backdrop {
+  background: hsl(0deg, 0%, 15%);
+  opacity: 0.7;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.main-image {
+  position: relative;
+  width: 100%;
+  transition: 0.5s ease-in-out;
+}
+.main-image .previous {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+}
+.main-image .shoe {
+  width: 100%;
+  position: relative;
+}
+.main-image .next {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 2;
+}
+.main-image .next::before {
+  content: "";
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  background-color: white;
+}/*# sourceMappingURL=index.css.map */

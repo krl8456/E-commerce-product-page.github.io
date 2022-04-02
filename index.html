@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">  
   <title>Frontend Mentor | E-commerce product page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,13 +18,25 @@
   </style>
 </head>
 <body>
-
-  Collections
-  Men
-  Women
-  About
-  Contact
-
+  <nav class="navigation">
+    <img src="images/icon-menu.svg" alt="menu icon" class="hamburger">
+    <h1 class="main-header"><img src="images/logo.svg" alt="logo"></h1>
+    <img src="images/icon-cart.svg" alt="cart" class="cart">
+    <img src="images/image-avatar.png" alt="avatar" class="avatar">
+  </nav>
+  <dialog class="hamburger-menu">
+    <img src="images/icon-close.svg" alt="close icon" class="close-icon">
+    <p>Collections</p>
+    <p>Men</p>
+    <p>Women</p>
+    <p>About</p>
+    <p>Contact</p>
+  </dialog>
+  <div class="main-image">
+    <img src="images/icon-previous.svg" alt="previous image" class="previous">
+    <img src="images/image-product-1.jpg" alt="picture of shoes" class="shoe">
+    <img src="images/icon-next.svg" alt="next image" class="next">
+  </div>
   Sneaker Company
 
   Fall Limited Edition Sneakers
@@ -41,4 +56,5 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+<script src="index.js"></script>
 </html>
