@@ -79,28 +79,126 @@ html, body {
 .main-image {
   position: relative;
   width: 100%;
-  transition: 0.5s ease-in-out;
 }
-.main-image .previous {
-  position: absolute;
-  left: 0;
-  top: 50%;
+.main-image .circle1, .main-image .circle2 {
   z-index: 2;
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 1.5em);
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: hsl(0deg, 0%, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.main-image .circle1 {
+  left: 5%;
+}
+.main-image .circle2 {
+  right: 5%;
 }
 .main-image .shoe {
   width: 100%;
   position: relative;
 }
-.main-image .next {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  z-index: 2;
+
+.informations {
+  margin-inline: auto;
+  padding-left: 1em;
+  padding-top: 0.8em;
 }
-.main-image .next::before {
-  content: "";
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  background-color: white;
+.informations .company-name {
+  text-transform: uppercase;
+  font-size: clamp(0.8em, 2vw, 1.1em);
+  color: hsl(26deg, 100%, 55%);
+}
+.informations .description-header {
+  font-size: clamp(1.5em, 6vw, 2em);
+}
+.informations .description {
+  color: hsl(219deg, 9%, 45%);
+}
+.informations .prices {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 3em;
+}
+.informations .prices .price {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+  font-size: clamp(1em, 4vw, 1.5em);
+}
+.informations .prices .discount {
+  position: absolute;
+  left: 15%;
+  margin-left: 1em;
+  padding: 0.2em;
+  color: hsl(26deg, 100%, 55%);
+  background-color: hsl(25deg, 100%, 94%);
+}
+.informations .prices .price-before-discount {
+  position: absolute;
+  right: 10%;
+}
+.informations .amount {
+  width: 95%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: hsl(223deg, 64%, 98%);
+  position: relative;
+  margin-inline: auto;
+}
+.informations .amount .minus {
+  cursor: pointer;
+  position: absolute;
+  left: 5%;
+}
+.informations .amount .plus {
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+}
+.informations .amount .amount-counter {
+  font-weight: 700;
+}
+.informations .add-to-cart-button {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: block;
+  margin-inline: auto;
+  width: 95%;
+  background-color: hsl(26deg, 100%, 55%);
+  border: 0;
+  height: 4em;
+  border-radius: 0.8em;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0px 18px 38px -19px rgb(255, 140, 26);
+}
+.informations .add-to-cart-button .button-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-inline: auto;
+  position: relative;
+  height: 100%;
+  width: 14em;
+}
+.informations .add-to-cart-button .cart {
+  position: relative;
+  left: -0.5em;
+  filter: brightness(0) invert(1);
 }/*# sourceMappingURL=index.css.map */

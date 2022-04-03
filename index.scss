@@ -62,28 +62,120 @@ html, body {
 .main-image {
     position: relative;
     width: 100%;
-    transition: 0.5s ease-in-out;
-    .previous {
-        position: absolute;
-        left: 0;
-        top: 50%;
+    .circle1, .circle2 {
         z-index: 2;
+        cursor: pointer;
+        position: absolute;
+        top: calc(50% - 1.5em);
+        width: 3em;
+        height: 3em;
+        border-radius: 50%;
+        background-color: v.$white;
+        @include c.center(row);
+    }
+    .circle1 {
+        left: 5%;
+    }
+    .circle2 {
+        right: 5%;
     }
     .shoe {
         width: 100%;
         position: relative;
     }
-    .next {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        z-index: 2;
-        &::before {
-            content: "";
-            width: 10em;
-            height: 10em;
-            border-radius: 50%;
-            background-color: white;
+}
+.informations {
+    margin-inline: auto;
+    padding-left: 1em;
+    padding-top: 0.8em;
+    .company-name {
+        text-transform: uppercase;
+        font-size: clamp(0.8em, 2vw, 1.1em);
+        color: v.$orange;
+    }
+    .description-header {
+        font-size: clamp(1.5em, 6vw, 2em);
+    }
+    .description {
+        color: v.$dark-grayish-blue;
+    }
+    .prices {
+        position: relative;
+        @include c.center(row);
+        height: 3em;
+        .price {
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+            font-size: clamp(1em, 4vw, 1.5em);
+        }
+        .discount {
+            position: absolute;
+            left: 15%;
+            margin-left: 1em;
+            padding: 0.2em;
+            color: v.$orange;
+            background-color: v.$pale-orange;
+        }
+        .price-before-discount {
+            position: absolute;
+            right: 10%;
         }
     }
+    .amount {
+        width: 95%;
+        height: 3em;
+        @include c.center(row);
+        background-color: v.$light-grayish-blue;
+        position: relative;
+        margin-inline: auto;
+        .minus {
+            cursor: pointer;
+            position: absolute;
+            left: 5%;
+        }
+        .plus {
+            cursor: pointer;
+            position: absolute;
+            right: 5%;
+        }
+        .amount-counter {
+            font-weight: 700;
+        }
+    }
+  
+    .add-to-cart-button {
+        position: relative;
+        margin-top: 1em;
+        margin-bottom: 2em;
+        display: block;
+        margin-inline: auto;
+        width: 95%;
+        background-color: v.$orange;
+        border: 0;
+        height: 4em;
+        border-radius: .8em;
+        color: v.$white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0px 18px 38px -19px rgba(255, 140, 26, 1);
+        .button-content {
+            @include c.center(row);
+            margin-inline: auto;
+            position: relative;
+            height: 100%;
+            width: 14em;
+        }
+        .cart {
+            position: relative;
+            left: -.5em;
+            filter: brightness(0) invert(1);
+        }
+    }
+
 }
+
+
+
+
+
