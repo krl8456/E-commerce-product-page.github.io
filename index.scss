@@ -13,7 +13,7 @@ html, body {
 }
 .navigation {
     position: relative;
-    height: 10vh;
+    height: 4em;
     @include c.center(row);
 }
 .hamburger {
@@ -25,6 +25,9 @@ html, body {
     position: absolute;
     left: 0;
     margin-left: 3em;
+}
+.nav-paragraph {
+    cursor: pointer;
 }
 .cart {
     position: absolute;
@@ -86,17 +89,19 @@ html, body {
 }
 .informations {
     margin-inline: auto;
-    padding-left: 1em;
     padding-top: 0.8em;
+    text-indent: 1em;
     .company-name {
         text-transform: uppercase;
         font-size: clamp(0.8em, 2vw, 1.1em);
         color: v.$orange;
     }
     .description-header {
-        font-size: clamp(1.5em, 6vw, 2em);
+        font-size: clamp(1.2em, 6vw, 2em);
     }
     .description {
+        text-indent: 0;
+        padding-left: 1em;
         color: v.$dark-grayish-blue;
     }
     .prices {
@@ -110,16 +115,21 @@ html, body {
             font-size: clamp(1em, 4vw, 1.5em);
         }
         .discount {
+            text-indent: 0.2em;
             position: absolute;
-            left: 15%;
-            margin-left: 1em;
+            left: 22%;
+            transform: translate(22%, 0);
             padding: 0.2em;
             color: v.$orange;
             background-color: v.$pale-orange;
+            font-weight: 700;
         }
         .price-before-discount {
             position: absolute;
             right: 10%;
+            color: v.$grayish-blue;
+            text-decoration:line-through;
+            font-weight: 700;
         }
     }
     .amount {
@@ -172,10 +182,99 @@ html, body {
             filter: brightness(0) invert(1);
         }
     }
-
 }
-
-
-
-
-
+.cart-popup {
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    height: 20em;
+    background-color: v.$white;
+    z-index: 2;
+    border-radius: 1em;
+    box-shadow: 0px 6px 16px 0px rgb(87, 87, 87);
+}
+.cart-popup-header {
+    padding-left: 1.5em;
+    padding-top: 1.5em;
+    margin-bottom: 2.5em;
+}
+.popup-line {
+    width: 100%;
+    height: 1px;
+    background-color: v.$light-grayish-blue;
+}
+.popup-cart-empty-informations {
+    text-align: center;
+    color: v.$dark-grayish-blue;
+    font-weight: 700;
+    font-size: clamp(0.8em, 2vw, 1.1em);
+}
+.empty-cart-div {
+    @include c.center(row);
+    width: 100%;
+    height: calc(68%);
+}
+.thumbnail {
+    position: absolute;
+    margin-right: .5em;
+    left: 5%;
+    top: 30%;
+    transform: translate(0, -30%);
+    height: 4em;
+    border-radius: .5em;
+}
+.final-price {
+    font-weight: 700;
+    color: black;
+}
+.cart-information {
+    position: absolute;
+    top: 7em;
+    width: 100%;
+    height: 60%;
+}
+.cart-information-description {
+    position: absolute;
+    top: 30%;
+    transform: translate(20%, -30%);
+    left: 20%;
+    font-weight: 400;
+    font-size: clamp(0.7em, 3vw, 1.2em);
+    text-align: left;
+    width: 15em;
+}
+.trash-image {
+    position: absolute;
+    left: 90%;
+    top: 30%;
+    transform: translate(0, -30%);
+    cursor: pointer;
+}
+.checkout-button {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 90%;
+    height: 4em;
+    background-color: v.$orange;
+    border: 0;
+    border-radius: .7em;
+    transform: translate(-50%, 0);
+    color: v.$white;
+    font-weight: 700;
+    cursor: pointer;
+}
+.amount-bubble {
+    position: absolute;
+    right: 20%;
+    transform: translate(50%, 0);
+    top: 0.6em;
+    width: 1.8em;
+    height: 1.2em;
+    background-color: v.$orange;
+    border-radius: 0.6em;
+    color: v.$white;
+    text-align: center;
+}
