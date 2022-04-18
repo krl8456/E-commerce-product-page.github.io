@@ -124,10 +124,6 @@ html, body {
             border-radius: 0.5em;
         }
     }
-    .popup-main-image {
-        height: 70%;
-        width: auto;
-    }
 }
 
 
@@ -358,7 +354,9 @@ html, body {
     color: v.$white;
     text-align: center;
 }
-.attribution {
+.footer {
+    font-size: 0.8em;
+    text-align: center;
     margin-top: 7em;
 }
 @keyframes flow {
