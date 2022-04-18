@@ -21,10 +21,45 @@
   <div class="container">
     <nav class="navigation">
       <img src="images/icon-menu.svg" alt="menu icon" class="hamburger">
-      <h1 class="main-header"><img src="images/logo.svg" alt="logo"></h1>
+      <h1 class="main-header"><img src="images/logo.svg" alt="logo" class="logo"></h1>
+      <div class="navigation-informations">
+        <div class="nav-desktop-paragraph">Collections<div class="paragraph-line"></div></div>
+        <div class="nav-desktop-paragraph">Men<div class="paragraph-line"></div></div>
+        <div class="nav-desktop-paragraph">Women<div class="paragraph-line"></div></div>
+        <div class="nav-desktop-paragraph">About<div class="paragraph-line"></div></div>
+        <div class="nav-desktop-paragraph">Contact<div class="paragraph-line"></div></div>
+      </div>
       <img src="images/icon-cart.svg" alt="cart" class="cart">
       <img src="images/image-avatar.png" alt="avatar" class="avatar">
+      <div class="nav-line"></div>
     </nav>
+    
+      <dialog class="popup-modal">
+          <img src="images/icon-close.svg" alt="close" class="popup-close-icon"> <br>
+          <img src="images/image-product-1.jpg" alt="picture of shoe" class="popup-main-image">
+          <div class="popup-thumbnails">
+            <div class="popup-previous-image">
+              <img src="images/icon-previous.svg" alt="previous image" class="popup-arrow-icon">
+            </div>
+            <div class="popup-thumbnail-container">
+              <img src="images/image-product-1-thumbnail.jpg" alt="image of shoes" class="popup-thumbnail">
+            </div>
+            <div class="popup-thumbnail-container">
+              <img src="images/image-product-2-thumbnail.jpg" alt="image of shoes" class="popup-thumbnail">
+            </div>
+            <div class="popup-thumbnail-container">
+              <img src="images/image-product-3-thumbnail.jpg" alt="image of shoes" class="popup-thumbnail">
+            </div>
+            <div class="popup-thumbnail-container">
+              <img src="images/image-product-4-thumbnail.jpg" alt="image of shoes" class="popup-thumbnail">
+            </div>
+            <div class="popup-next-image">
+              <img src="images/icon-next.svg" alt="next image" class="popup-arrow-icon">
+            </div>
+          </div>    
+      </dialog>
+    
+    
     <dialog class="hamburger-menu">
       <img src="images/icon-close.svg" alt="close icon" class="close-icon">
       <p class="nav-paragraph">Collections</p>
@@ -43,6 +78,12 @@
           <div class="circle2">
             <img src="images/icon-next.svg" alt="next image" class="next">
           </div>
+          <div class="thumbnails">
+            <img src="images/image-product-1-thumbnail.jpg" alt="image of shoes" class="main-thumbnail">
+            <img src="images/image-product-2-thumbnail.jpg" alt="image of shoes" class="main-thumbnail">
+            <img src="images/image-product-3-thumbnail.jpg" alt="image of shoes" class="main-thumbnail">
+            <img src="images/image-product-4-thumbnail.jpg" alt="image of shoes" class="main-thumbnail">
+          </div>
         </div>
       </div>
       <div class="right-part">
@@ -60,12 +101,15 @@
             <span class="discount">50%</span>
             <span class="price-before-discount">$250.00</span>
           </div>
-          <div class="amount">
-            <img src="images/icon-minus.svg" alt="minus" class="minus">
-            <span class="amount-counter">0</span>
-            <img src="images/icon-plus.svg" alt="plus" class="plus">
+          <div class="amount-and-button">
+            <div class="amount">
+              <img src="images/icon-minus.svg" alt="minus" class="minus">
+              <span class="amount-counter">0</span>
+              <img src="images/icon-plus.svg" alt="plus" class="plus">
+            </div>
+              <button type="button" class="add-to-cart-button"><div class="button-content"><img src="images/icon-cart.svg" alt="cart" class="cart">Add to cart</div></button>
           </div>
-            <button type="button" class="add-to-cart-button"><div class="button-content"><img src="images/icon-cart.svg" alt="cart" class="cart">Add to cart</div></button>
+          
            
         </div>
       </div>
@@ -76,7 +120,7 @@
     
     <div class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/krl8456">krl8456</a>.
     </div>
   </div>
   

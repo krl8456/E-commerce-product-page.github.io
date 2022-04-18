@@ -2,6 +2,7 @@
 @use 'modules/centering' as c;
 * {
     font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
 }
 html, body, h1, h2, h3, h4, h5, h6 {
     margin: 0;
@@ -15,6 +16,9 @@ html, body {
     position: relative;
     height: 4em;
     @include c.center(row);
+}
+.navigation-informations {
+    visibility: hidden;
 }
 .hamburger {
     position: absolute;
@@ -55,16 +59,87 @@ html, body {
         font-weight: 700;
     }
 }
-.hamburger-menu::backdrop {
-    background: hsl(0, 0%, 15%);;
+.hamburger-menu::backdrop, .popup-modal::backdrop {
+    background: hsl(0, 0%, 15%);
     opacity: .7;
 }
+.popup-modal {
+    // @include c.center(column);
+    margin-top: 2em;
+    border: 0;
+    width: 25em;
+    height: 40em;
+    padding: 0;
+    overflow: visible;
+    background-color: hsl(0, 0%, 0%, 0);
+    .popup-previous-image, .popup-next-image {
+        position: absolute;
+        width: 3em;
+        height: 3em;
+        background-color: v.$white;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .popup-previous-image {
+        top: 13em;
+        left: -1.5em;
+    }
+    .popup-next-image {
+        top: 13em;
+        right: -1.5em;
+    }
+    .popup-arrow-icon {
+        position: absolute;
+        left: 35%;
+        top: 30%;
+    }
+    .popup-main-image {
+        width: 100%;
+        border-radius: 1em;
+        margin-top: 1em;
+    }
+    .popup-close-icon {
+        position: absolute;
+        right: 0;
+        filter: invert(57%) sepia(41%) saturate(2515%) hue-rotate(346deg) brightness(99%) contrast(104%);
+        height: 1em;
+        align-self: flex-end;
+        cursor: pointer;   
+        &:hover {
+            color: v.$orange;
+        }    
+    }
+   
+    .popup-thumbnails {
+        @include c.center(row);
+        column-gap: 0.9em;
+        margin-top: 1.5em;
+        .popup-thumbnail-container {
+            border-radius: 0.5em;
+            background-color: v.$white;
+        }
+        .popup-thumbnail {
+            width: 5em;
+            height: auto;
+            border-radius: 0.5em;
+        }
+    }
+    .popup-main-image {
+        height: 70%;
+        width: auto;
+    }
+}
+
+
 .close-icon {
     cursor: pointer;
 }
 .main-image {
     position: relative;
     width: 100%;
+    .thumbnails {
+        display: none;
+    }
     .circle1, .circle2 {
         z-index: 2;
         cursor: pointer;
@@ -83,6 +158,7 @@ html, body {
         right: 5%;
     }
     .shoe {
+        cursor: pointer;
         width: 100%;
         position: relative;
     }
@@ -97,7 +173,7 @@ html, body {
         color: v.$orange;
     }
     .description-header {
-        font-size: clamp(1.2em, 6vw, 2em);
+        font-size: clamp(1.2em, 5vw, 2em);
     }
     .description {
         text-indent: 0;
@@ -150,6 +226,7 @@ html, body {
             right: 5%;
         }
         .amount-counter {
+            margin-left: -0.7em;
             font-weight: 700;
         }
     }
@@ -193,7 +270,7 @@ html, body {
     background-color: v.$white;
     z-index: 2;
     border-radius: 1em;
-    box-shadow: 0px 6px 16px 0px rgb(87, 87, 87);
+    box-shadow: 0px 6px 12px 0px rgb(164, 164, 164);
 }
 .cart-popup-header {
     padding-left: 1.5em;
@@ -226,8 +303,11 @@ html, body {
     border-radius: .5em;
 }
 .final-price {
+    font-size: clamp(0.7em, 1.8vw, 1.2em);
     font-weight: 700;
     color: black;
+    transform: translate(65%, 0%);
+    margin-left: 0.4em;
 }
 .cart-information {
     position: absolute;
@@ -270,11 +350,203 @@ html, body {
     position: absolute;
     right: 20%;
     transform: translate(50%, 0);
-    top: 0.6em;
+    top: .5em;
     width: 1.8em;
     height: 1.2em;
     background-color: v.$orange;
     border-radius: 0.6em;
     color: v.$white;
     text-align: center;
+}
+.attribution {
+    margin-top: 7em;
+}
+@keyframes flow {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+    
+}
+@media (min-width: 780px) {
+    .main-content {
+        @include c.center(row);
+        column-gap: 8.5em;
+    }
+    .cart {
+        right: 15%;
+    }
+    .navigation {
+        height: 6em;
+        .nav-line {
+            position: absolute;
+            bottom: 0;
+            left: 4.5em;
+            height: 1px;
+            background-color: v.$grayish-blue;
+            width: 90%;
+        }
+    }
+    .navigation-informations {
+        visibility: visible;
+        font-size: clamp(0.6em, 1.5vw, 1em);
+        @include c.center(row);
+        column-gap: 10%;
+        position: absolute;
+        left: -3.5%;
+        transform: translateX(140%);
+        height: 100%;
+        cursor: pointer;
+        .nav-desktop-paragraph {
+            color: v.$dark-grayish-blue;
+            @include c.center(row);
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            .paragraph-line {
+                visibility: hidden;
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                background-color: v.$orange;
+                bottom: 0;
+            }
+            &:hover {
+                .paragraph-line {
+                    visibility: visible;
+                    animation: flow 0.2s linear;
+                }
+                color: v.$black;
+            }
+
+        }      
+    }
+    .main-image{
+        .thumbnails {
+            @include c.center(row);
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 2em;
+            cursor: pointer;
+            line-height: 0;
+            .main-thumbnail {
+                vertical-align: bottom;
+                width: 5em;
+                height: auto;
+                border-radius: 0.5em;
+                &:hover {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+    
+    .avatar {
+        height: 40px;
+        &:checked {
+            border: 2px solid v.$orange;
+            border-radius: 50%;
+        }
+    }
+    .cart-popup {
+        left: 82%;
+        transform: translateX(-60%);
+        margin-right: 5em;
+        height: 15em;
+        width: 20em;
+        top: 5.5em;
+        
+    }
+    .empty-cart-div {
+        height: 13.5em;
+    }
+    .popup-cart-empty-informations {
+        font-size: 0.8em;
+    }
+    .hamburger {
+        visibility: hidden;
+    }
+    .amount-bubble {
+        top: 1.5em;
+        right: 15%;
+    }
+    .checkout-button {
+        top: 60%;
+    }
+    .thumbnail {
+        top: 15%;
+    }
+    .cart-information-description {
+        top: 15%;
+        left: 10%;
+    }
+    .trash-image {
+        left: 90%;
+        top: 15%;
+    }
+    .popup-line {
+        margin-top: -2em;
+    }
+    .right-part {
+        margin-top: 3em;
+        max-width: 45%;
+        margin-right: 8em;
+    }
+    .left-part {
+        margin-left: 10em;
+        max-width: 35%;
+        margin-top: 6em;
+        .previous, .next, .circle1, .circle2 {
+            visibility: hidden;
+        }
+        .main-image {
+            width: 25em;
+            height: auto;
+        }
+        .shoe {
+            border-radius: 1em;
+        }
+    }
+    .price-before-discount {
+        top: 3em;
+        left: 0;
+    }
+    .amount-and-button {
+        margin-top: 2em;
+        @include c.center(row);
+        column-gap: 1em;
+        margin-left: 1em;       
+    }
+    .amount {
+        min-width: 4em;
+        max-width: 35%;
+    }
+    .add-to-cart-button {
+        top: 0.6em;
+        margin-right: 1em;
+        min-width: 14em;
+        &:hover {
+            background-color: hsl(26, 100%, 55%, 0.7);
+        }
+    }
+    .informations {
+        .company-name {
+            font-size: 0.8em;
+            margin-bottom: 1em;
+        }
+        .description-header {
+            text-indent: 0;
+            padding-left: 0.5em;
+            margin-bottom: 1em;
+        }
+        .prices {
+            .discount {
+                left: 0%;
+                transform: translateX(270%);
+            }
+        }
+    }
+    
 }
